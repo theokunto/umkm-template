@@ -1,0 +1,357 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#FDFAF5;color:#1C1208;overflow-x:hidden}
+
+nav{background:#FDFAF5;border-bottom:1px solid #E8DFC8;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.2rem;font-weight:800;color:#1C1208;letter-spacing:-0.5px}
+.logo span{color:#854F0B}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.85rem;color:#7A6548;text-decoration:none;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#854F0B}
+.nav-wa{background:#854F0B;color:#FAEEDA;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.85rem;font-weight:700;text-decoration:none;transition:background 0.2s}
+.nav-wa:hover{background:#633806}
+
+section{padding:5rem 2rem}
+.container{max-width:1080px;margin:0 auto}
+
+.hero{background:#2C1A06;padding:5rem 2rem;color:#FAEEDA}
+.hero-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(250,199,117,0.15);border:1px solid rgba(250,199,117,0.3);color:#FAC775;font-size:0.75rem;font-weight:700;padding:0.35rem 1rem;border-radius:100px;margin-bottom:1.25rem;letter-spacing:0.5px;text-transform:uppercase}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.15;letter-spacing:-1.5px;margin-bottom:1rem;color:#FFF8EE}
+.hero h1 em{font-style:normal;color:#EF9F27}
+.hero p{color:#C4A87A;font-size:1rem;line-height:1.8;margin-bottom:2rem;max-width:480px}
+.hero-btns{display:flex;gap:0.85rem;flex-wrap:wrap}
+.btn-warm{background:#EF9F27;color:#2C1A06;padding:0.8rem 1.75rem;border-radius:10px;font-weight:800;font-size:0.9rem;text-decoration:none;transition:all 0.2s;display:inline-block}
+.btn-warm:hover{background:#FAC775}
+.btn-outline-warm{border:1.5px solid rgba(250,199,117,0.4);color:#FAC775;padding:0.8rem 1.75rem;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:all 0.2s;display:inline-block}
+.btn-outline-warm:hover{border-color:#FAC775;color:#FFF8EE}
+.hero-visual{display:flex;flex-direction:column;gap:1rem}
+.hero-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.hero-stat{background:rgba(255,255,255,0.05);border:1px solid rgba(250,199,117,0.15);border-radius:14px;padding:1.25rem;text-align:center}
+.hero-stat .num{font-size:2rem;font-weight:800;color:#EF9F27}
+.hero-stat .lbl{font-size:0.75rem;color:#9A7D52;margin-top:4px}
+.hero-cert{background:rgba(250,199,117,0.08);border:1px solid rgba(250,199,117,0.2);border-radius:14px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px}
+.hero-cert i{font-size:22px;color:#EF9F27}
+.hero-cert p{font-size:0.82rem;color:#C4A87A;line-height:1.5}
+.hero-cert strong{color:#FFF8EE;display:block;font-size:0.9rem;margin-bottom:2px}
+
+.tag{display:inline-block;background:#FAEEDA;color:#854F0B;font-size:0.72rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:100px;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem}
+.sec-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:0.6rem;color:#1C1208}
+.sec-sub{color:#7A6548;font-size:0.95rem;line-height:1.7;max-width:500px}
+
+#keunggulan{background:#FDFAF5}
+.unggulan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:3rem}
+.unggulan-card{background:#fff;border:0.5px solid #E8DFC8;border-radius:16px;padding:1.5rem;transition:border-color 0.2s}
+.unggulan-card:hover{border-color:#EF9F27}
+.ung-icon{width:46px;height:46px;background:#FAEEDA;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.ung-icon i{font-size:22px;color:#854F0B}
+.unggulan-card h3{font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;color:#1C1208}
+.unggulan-card p{font-size:0.82rem;color:#7A6548;line-height:1.6}
+
+#produk{background:#FFF8EE}
+.produk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+.produk-card{background:#fff;border:0.5px solid #E8DFC8;border-radius:16px;overflow:hidden;transition:all 0.25s}
+.produk-card:hover{border-color:#EF9F27;transform:translateY(-3px)}
+.produk-card.featured{border:2px solid #EF9F27}
+.produk-thumb{height:160px;display:flex;align-items:center;justify-content:center;position:relative}
+.produk-thumb i{font-size:64px;color:#2C1A06;opacity:0.12}
+.produk-thumb .badge-pop{position:absolute;top:12px;right:12px;background:#EF9F27;color:#2C1A06;font-size:0.7rem;font-weight:800;padding:0.25rem 0.7rem;border-radius:100px}
+.produk-body{padding:1.25rem}
+.produk-body h3{font-size:1rem;font-weight:700;margin-bottom:0.3rem;color:#1C1208}
+.produk-body .desc{font-size:0.8rem;color:#7A6548;margin-bottom:1rem;line-height:1.6}
+.produk-specs{list-style:none;margin-bottom:1.1rem;display:flex;flex-direction:column;gap:0.45rem}
+.produk-specs li{font-size:0.8rem;color:#5A4430;display:flex;align-items:center;gap:7px}
+.produk-specs li i{color:#EF9F27;font-size:14px}
+.produk-price{font-size:1.2rem;font-weight:800;color:#854F0B;margin-bottom:0.9rem}
+.produk-price span{font-size:0.75rem;color:#9A7D52;font-weight:400;margin-left:4px}
+.btn-pesan{display:block;text-align:center;background:#854F0B;color:#FAEEDA;padding:0.7rem;border-radius:10px;font-weight:700;font-size:0.85rem;text-decoration:none;transition:background 0.2s}
+.btn-pesan:hover{background:#633806}
+
+#proses{background:#2C1A06;padding:5rem 2rem}
+.proses-inner{max-width:1080px;margin:0 auto}
+.proses-inner .tag{background:rgba(250,199,117,0.15);color:#EF9F27}
+.proses-inner .sec-title{color:#FFF8EE}
+.proses-inner .sec-sub{color:#9A7D52}
+.proses-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:3rem;position:relative}
+.step{text-align:center;padding:1.5rem 1rem}
+.step-num{width:48px;height:48px;border-radius:50%;background:#EF9F27;color:#2C1A06;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.step h4{font-size:0.9rem;font-weight:700;color:#FFF8EE;margin-bottom:0.4rem}
+.step p{font-size:0.78rem;color:#9A7D52;line-height:1.6}
+.step-arrow{display:flex;align-items:center;justify-content:center;padding-top:2.5rem;color:#4A3018;font-size:1.5rem}
+
+#testimoni{background:#FDFAF5}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:3rem}
+.testi-card{background:#fff;border:0.5px solid #E8DFC8;border-radius:16px;padding:1.5rem}
+.testi-stars{display:flex;gap:3px;margin-bottom:0.75rem}
+.testi-stars i{font-size:15px;color:#EF9F27}
+.testi-card blockquote{font-size:0.875rem;color:#3A2810;line-height:1.7;margin-bottom:1rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:#FAEEDA;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;color:#854F0B;flex-shrink:0}
+.testi-name{font-size:0.85rem;font-weight:700;color:#1C1208}
+.testi-loc{font-size:0.75rem;color:#9A7D52}
+
+#kontak{background:#FFF8EE;padding:5rem 2rem}
+.kontak-inner{max-width:640px;margin:0 auto;text-align:center}
+.kontak-inner .sec-title{color:#1C1208}
+.kontak-inner p{color:#7A6548;font-size:0.95rem;line-height:1.7;margin-bottom:2.5rem}
+.kontak-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.btn-wa{background:#22c55e;color:#fff;padding:0.85rem 2rem;border-radius:10px;font-weight:800;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s}
+.btn-wa:hover{background:#16a34a}
+.btn-email{background:transparent;border:1.5px solid #C4A87A;color:#854F0B;padding:0.85rem 2rem;border-radius:10px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s}
+.btn-email:hover{border-color:#854F0B;background:#FAEEDA}
+.kontak-info{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.kinfo{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#7A6548}
+.kinfo i{color:#854F0B;font-size:18px}
+
+footer{background:#1C1208;padding:1.75rem 2rem;text-align:center;color:#4A3018;font-size:0.78rem}
+</style>
+
+<nav>
+  <div class="logo">Bara<span>Nusantara</span></div>
+  <ul class="nav-links">
+    <li><a href="#keunggulan">Keunggulan</a></li>
+    <li><a href="#produk">Produk</a></li>
+    <li><a href="#proses">Proses</a></li>
+    <li><a href="#testimoni">Testimoni</a></li>
+  </ul>
+  <a href="#kontak" class="nav-wa">Pesan Sekarang</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><i class="ti ti-leaf" aria-hidden="true"></i> 100% Bahan Alam</div>
+      <h1>Briket Kelapa <em>Ramah Lingkungan</em> untuk Kebutuhan Anda</h1>
+      <p>Terbuat dari tempurung kelapa pilihan, briket kami menghasilkan panas stabil, asap minimal, dan tahan lama. Cocok untuk BBQ, shisha, industri, hingga ekspor.</p>
+      <div class="hero-btns">
+        <a href="#produk" class="btn-warm">Lihat Produk</a>
+        <a href="#proses" class="btn-outline-warm">Cara Pembuatan</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-stat-grid">
+        <div class="hero-stat"><div class="num">5.000+</div><div class="lbl">Ton Terproduksi</div></div>
+        <div class="hero-stat"><div class="num">8 Jam</div><div class="lbl">Durasi Nyala</div></div>
+        <div class="hero-stat"><div class="num">200+</div><div class="lbl">Pelanggan Aktif</div></div>
+        <div class="hero-stat"><div class="num">15+</div><div class="lbl">Negara Ekspor</div></div>
+      </div>
+      <div class="hero-cert">
+        <i class="ti ti-award" aria-hidden="true"></i>
+        <p><strong>Bersertifikat & Terpercaya</strong>Produk kami telah memenuhi standar SNI dan siap ekspor ke pasar Timur Tengah, Eropa, dan Asia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="keunggulan">
+  <div class="container">
+    <span class="tag">Mengapa Pilih Kami</span>
+    <h2 class="sec-title">Keunggulan Briket Kelapa Kami</h2>
+    <p class="sec-sub">Kualitas terbaik dari bahan baku alami dengan proses produksi yang terstandar.</p>
+    <div class="unggulan-grid">
+      <div class="unggulan-card">
+        <div class="ung-icon"><i class="ti ti-flame" aria-hidden="true"></i></div>
+        <h3>Panas Tinggi & Stabil</h3>
+        <p>Kalori mencapai 7.000–7.500 kkal/kg. Nyala konsisten tanpa fluktuasi temperatur yang mengganggu.</p>
+      </div>
+      <div class="unggulan-card">
+        <div class="ung-icon"><i class="ti ti-wind" aria-hidden="true"></i></div>
+        <h3>Asap Sangat Minimal</h3>
+        <p>Proses karbonisasi sempurna menghasilkan briket yang hampir tidak berasap. Aman untuk dalam ruangan.</p>
+      </div>
+      <div class="unggulan-card">
+        <div class="ung-icon"><i class="ti ti-clock" aria-hidden="true"></i></div>
+        <h3>Tahan Lama 6–8 Jam</h3>
+        <p>Lebih hemat dari arang biasa. Satu sesi pembakaran cukup untuk acara BBQ sepanjang malam.</p>
+      </div>
+      <div class="unggulan-card">
+        <div class="ung-icon"><i class="ti ti-recycle" aria-hidden="true"></i></div>
+        <h3>Ramah Lingkungan</h3>
+        <p>Memanfaatkan limbah tempurung kelapa. Emisi karbon jauh lebih rendah dibanding bahan bakar fosil.</p>
+      </div>
+      <div class="unggulan-card">
+        <div class="ung-icon"><i class="ti ti-package" aria-hidden="true"></i></div>
+        <h3>Kemasan Higienis</h3>
+        <p>Dikemas vacuum atau karton berlapis PE agar tidak lembab dan tahan selama pengiriman jarak jauh.</p>
+      </div>
+      <div class="unggulan-card">
+        <div class="ung-icon"><i class="ti ti-ship" aria-hidden="true"></i></div>
+        <h3>Siap Ekspor</h3>
+        <p>Pengalaman ekspor ke Timur Tengah, Eropa, dan Asia. Dilengkapi dokumen COA, Phytosanitary, dan fumigasi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="produk">
+  <div class="container">
+    <span class="tag">Produk Kami</span>
+    <h2 class="sec-title">Pilihan Produk Briket</h2>
+    <p class="sec-sub">Tersedia dalam berbagai bentuk dan ukuran sesuai kebutuhan. Pembelian satuan maupun grosir.</p>
+    <div class="produk-grid">
+
+      <div class="produk-card">
+        <div class="produk-thumb" style="background:#FFF8EE">
+          <i class="ti ti-hexagon" aria-hidden="true"></i>
+        </div>
+        <div class="produk-body">
+          <h3>Briket Hexagonal</h3>
+          <p class="desc">Bentuk segi enam, populer untuk shisha & hookah. Nyala merata ke seluruh sisi.</p>
+          <ul class="produk-specs">
+            <li><i class="ti ti-check" aria-hidden="true"></i> Ukuran 25mm × 25mm</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Kalori 7.200 kkal/kg</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Durasi nyala ±60 menit/pcs</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Kemasan 1 kg / 10 kg / 20 kg</li>
+          </ul>
+          <div class="produk-price">Rp 18.000 <span>/ kg (retail)</span></div>
+          <a href="https://wa.me/6281234567890?text=Halo, saya ingin pesan Briket Hexagonal" class="btn-pesan">Pesan via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="produk-card featured">
+        <div class="produk-thumb" style="background:#FFF3E0">
+          <i class="ti ti-circle-square" aria-hidden="true"></i>
+          <span class="badge-pop">Terlaris</span>
+        </div>
+        <div class="produk-body">
+          <h3>Briket Pillow (BBQ)</h3>
+          <p class="desc">Bentuk bantal, ideal untuk BBQ & panggang. Terbakar sempurna dari dalam ke luar.</p>
+          <ul class="produk-specs">
+            <li><i class="ti ti-check" aria-hidden="true"></i> Ukuran 50mm × 35mm × 25mm</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Kalori 7.500 kkal/kg</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Durasi nyala 2–3 jam/pcs</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Kemasan 3 kg / 5 kg / 20 kg</li>
+          </ul>
+          <div class="produk-price">Rp 15.000 <span>/ kg (retail)</span></div>
+          <a href="https://wa.me/6281234567890?text=Halo, saya ingin pesan Briket Pillow BBQ" class="btn-pesan">Pesan via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <div class="produk-thumb" style="background:#FFF8EE">
+          <i class="ti ti-cylinder" aria-hidden="true"></i>
+        </div>
+        <div class="produk-body">
+          <h3>Briket Silinder Industri</h3>
+          <p class="desc">Ukuran besar untuk kebutuhan industri: laundry, restoran, katering, dan pabrik.</p>
+          <ul class="produk-specs">
+            <li><i class="ti ti-check" aria-hidden="true"></i> Diameter 70–90mm</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Kalori 7.000 kkal/kg</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Durasi nyala 6–8 jam</li>
+            <li><i class="ti ti-check" aria-hidden="true"></i> Min. order 100 kg</li>
+          </ul>
+          <div class="produk-price">Rp 9.500 <span>/ kg (grosir)</span></div>
+          <a href="https://wa.me/6281234567890?text=Halo, saya ingin info Briket Silinder Industri" class="btn-pesan">Pesan via WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="proses">
+  <div class="proses-inner">
+    <span class="tag">Proses Produksi</span>
+    <h2 class="sec-title">Dari Tempurung ke Bara</h2>
+    <p class="sec-sub">Setiap tahap dikerjakan dengan ketelitian tinggi untuk memastikan kualitas yang konsisten.</p>
+    <div class="proses-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Seleksi Bahan Baku</h4>
+        <p>Tempurung kelapa tua dipilih dari petani lokal. Dikering-anginkan hingga kadar air &lt; 15%.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Karbonisasi</h4>
+        <p>Pembakaran dalam kiln tertutup pada suhu 500–700°C selama 6–8 jam menghasilkan arang berkualitas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Penghancuran & Ayak</h4>
+        <p>Arang dihancurkan dan diayak hingga ukuran partikel seragam untuk hasil press yang padat.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Pencampuran</h4>
+        <p>Dicampur dengan perekat alami tapioka. Tanpa bahan kimia tambahan.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h4>Pengepresan</h4>
+        <p>Dicetak dengan mesin press hidrolik sesuai bentuk pesanan: hexagonal, pillow, atau silinder.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <h4>Pengeringan & Kemas</h4>
+        <p>Dikeringkan di oven industri lalu dikemas rapi. Siap kirim ke seluruh Indonesia dan mancanegara.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimoni">
+  <div class="container">
+    <span class="tag">Testimoni</span>
+    <h2 class="sec-title">Kata Pelanggan Kami</h2>
+    <p class="sec-sub">Dipercaya oleh ratusan pelanggan dari berbagai segmen — dari rumahan hingga ekspor.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
+        <blockquote>"Briket pillow-nya luar biasa untuk BBQ keluarga. Nyalanya stabil, tidak berasap sama sekali. Sudah reorder 5 kali dan kualitasnya selalu konsisten."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">RA</div>
+          <div><div class="testi-name">Rudi Ardiansyah</div><div class="testi-loc">Pemilik Restoran BBQ, Surabaya</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
+        <blockquote>"Kami sudah ekspor 3 kontainer ke Saudi Arabia. Kualitas sesuai spesifikasi, dokumen lengkap, dan pengiriman tepat waktu. Mitra bisnis yang sangat profesional."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">SH</div>
+          <div><div class="testi-name">Siti Hartini</div><div class="testi-loc">Eksportir Komoditas, Jakarta</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
+        <blockquote>"Untuk shisha lounge kami, briket hexagonal ini adalah yang terbaik. Pelanggan puas karena tidak ada bau aneh. Harga grosir juga sangat kompetitif."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">DK</div>
+          <div><div class="testi-name">Dimas Kurniawan</div><div class="testi-loc">Owner Shisha Lounge, Bali</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="kontak-inner">
+    <span class="tag">Hubungi Kami</span>
+    <h2 class="sec-title">Siap Memesan atau Ingin Bertanya?</h2>
+    <p>Tim kami siap membantu — dari konsultasi produk, penawaran harga grosir, hingga kebutuhan ekspor. Hubungi kami sekarang!</p>
+    <div class="kontak-btns">
+      <a href="https://wa.me/6281234567890" class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Chat WhatsApp</a>
+      <a href="mailto:hello@baranusantara.id" class="btn-email"><i class="ti ti-mail" aria-hidden="true"></i> Kirim Email</a>
+    </div>
+    <div class="kontak-info">
+      <div class="kinfo"><i class="ti ti-map-pin" aria-hidden="true"></i> Kendal, Jawa Tengah</div>
+      <div class="kinfo"><i class="ti ti-clock" aria-hidden="true"></i> Senin–Sabtu 08.00–17.00</div>
+      <div class="kinfo"><i class="ti ti-phone" aria-hidden="true"></i> +62 812-3456-7890</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 BaraNusantara — Briket Kelapa Premium Indonesia. Semua hak dilindungi.</p>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+  });
+});
+</script>
